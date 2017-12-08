@@ -1,6 +1,17 @@
 import React from 'react';
 
-export default () =>{
+export default (props) =>{
+    const tableRows = props.data.map((item, index) => {
+        return (
+            <tr key={index}>
+                <td>{item.name}</td>
+                <td>{item.course}</td>
+                <td>{item.grade}</td>
+            </tr>
+        )
+
+    });
+
     return (
         <table className="table">
             <thead className="thead-inverse">
@@ -11,21 +22,7 @@ export default () =>{
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>Sangwoo</th>
-                    <th>React</th>
-                    <th>100</th>
-                </tr>
-                <tr>
-                    <th>Chung</th>
-                    <th>PHP</th>
-                    <th>100</th>
-                </tr>
-                <tr>
-                    <th>Christine</th>
-                    <th>jQuery</th>
-                    <th>100</th>
-                </tr>
+                {tableRows}
             </tbody>
         </table>
     )
