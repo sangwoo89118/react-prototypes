@@ -28,7 +28,5 @@ export default () =>{
                 </tr>
             </tbody>
         </table>
-
-
     )
 }
